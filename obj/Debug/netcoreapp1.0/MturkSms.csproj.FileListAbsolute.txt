@@ -1,0 +1,10 @@
+/Users/administrator/Projects/beacon-sms-mturk/bin/Debug/netcoreapp1.0/MturkSms.deps.json
+/Users/administrator/Projects/beacon-sms-mturk/bin/Debug/netcoreapp1.0/MturkSms.runtimeconfig.json
+/Users/administrator/Projects/beacon-sms-mturk/bin/Debug/netcoreapp1.0/MturkSms.runtimeconfig.dev.json
+/Users/administrator/Projects/beacon-sms-mturk/bin/Debug/netcoreapp1.0/MturkSms.dll
+/Users/administrator/Projects/beacon-sms-mturk/bin/Debug/netcoreapp1.0/MturkSms.pdb
+/Users/administrator/Projects/beacon-sms-mturk/obj/Debug/netcoreapp1.0/MturkSms.AssemblyInfo.cs
+/Users/administrator/Projects/beacon-sms-mturk/obj/Debug/netcoreapp1.0/MturkSms.dll
+/Users/administrator/Projects/beacon-sms-mturk/obj/Debug/netcoreapp1.0/MturkSms.pdb
+/Users/administrator/Projects/beacon-sms-mturk/bin/Debug/netcoreapp1.0/appsettings.Development.json
+/Users/administrator/Projects/beacon-sms-mturk/bin/Debug/netcoreapp1.0/appsettings.json

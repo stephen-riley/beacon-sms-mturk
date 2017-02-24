@@ -1,0 +1,124 @@
+@{ ViewData["Title"] = "SMS Home Page"; }
+
+<p/>
+
+<div class='frame container' id='stage1'>
+    <form class='form-horizontal' onsubmit='return false;'>
+        Please enter your SMS number <strong>in international format</strong>.<br/> Examples:
+        <ul>
+            <li>+1-206-555-1212 (US)</li>
+            <li>+44 20 7123 4567 (UK)</li>
+            <li>+90 212 555 1212 (TR)</li>
+        </ul>
+        <div class="form-group">
+            <label for="phone-num" class="col-sm-2 control-label">Phone Number</label>
+            <div class="col-sm-10">
+                <input type="tel" class="form-control" id="phone-num" placeholder="Phone Number">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" id='check-phone-num-btn' class="btn btn-default" onclick='verifyPhoneNumber();'>Send me a code</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<p/>
+
+<div class="frame container" id='stage2' style="display:block">
+    <div class="col-sm-6 pull-left">
+        <form class='form-horizontal' onsubmit='return false;'>
+            Detected a <strong><span id='num-country-info'></span></strong> number.
+            <p/> Please enter the code you received. If you do not receive a code in 3 minutes, <a href='#' onclick='didntReceive(); return false;'><span class='text-danger'>please click here</span></a>.
+            <div class="form-group">
+                <label for="code" class="col-sm-2 control-label">Code</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="code" placeholder="xxx-xxx">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" id='submit-code-btn' class="btn btn-default" onclick='submitCode();'>Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-6 pull-right">
+        <input id='timer1' class='dial' type='text' value='180' />
+    </div>
+</div>
+
+<p/>
+
+<div class="frame container" id='stage2-failed' style="display:block">
+    <div class="col-sm-12">
+        <form class='form-horizontal' onsubmit='return false;'>
+            <div class="form-group">
+                We are sorry you didn't receive the text message. Thank you for participating.
+            </div>
+            <div class="form-group">
+                You may now close the window.
+            </div>
+        </form>
+    </div>
+</div>
+
+<p/>
+
+<div class="frame container" id='stage3-ok' style="display:block">
+    <div class="col-sm-12">
+        <form class='form-horizontal' onsubmit='return false;'>
+            <div class="form-group">
+                Please respond to the text message by sending back <code>ok</code> within 3 minutes.
+            </div>
+            <div class="form-group">
+                <button type='button' class="btn btn-default" onclick='sentResponse();'>Click here when done</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<p/>
+
+<div class="frame container" id='stage3-err' style="display:block">
+    <form class='form-horizontal' onsubmit='return false;'>
+        <span class='text-danger'>Invalid code.</span>
+    </form>
+</div>
+
+<p/>
+
+<div class="frame container" id='stage4' style="display:block">
+    <div class="col-sm-6 pull-left">
+        <div class="form-group">
+            Waiting for response...
+        </div>
+    </div>
+    <div class="col-sm-6 pull-right">
+        <input id='timer2' class='dial' type='text' value='180' />
+    </div>
+</div>
+
+<p/>
+
+<div class="frame container" id='stage4-ok' style="display:block">
+    <div class="col-sm-12">
+        <div class="form-group">
+            We received the response. Thank you.
+        </div>
+        <div class="form-group">
+            If you are asked for your confirmation code, please enter the code <code><span id='confirmation-code'></span></code>.
+        </div>
+    </div>
+</div>
+
+<p/>
+
+<div class="frame container" id='stage4-failed' style="display:block">
+    <div class="col-sm-12">
+        <div class="form-group">
+            <span class='text-danger'>We did not receive a response.  Thank you for trying.</span>
+        </div>
+    </div>
+</div>
